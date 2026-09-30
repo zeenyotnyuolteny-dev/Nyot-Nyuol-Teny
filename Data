@@ -1,0 +1,24 @@
+# Week 2 Assignment: Simple Bill Calculator
+# Description: Calculates the total cost of a bill including a tip or tax percentage.
+
+print("--- Welcome to the Simple Bill Calculator ---")
+
+# Step 1: Get the base bill amount from the user and convert it to a float
+bill_amount = float(input("Enter the total bill amount (KES): "))
+
+# Step 2: Get the tip or tax percentage from the user
+tip_percentage = float(input("Enter the tip or tax percentage (e.g., 10 for 10%): "))
+
+# Step 3: Calculate the tip amount and the final total
+tip_amount = (bill_amount * tip_percentage) / 100
+total_bill = bill_amount + tip_amount
+
+# Step 4: Display the professional summary using an f-string
+print("\n" + "=" * 30)
+print("         BILL SUMMARY         ")
+print("=" * 30)
+print(f"Subtotal         : KES {bill_amount:.2f}")
+print(f"Tip/Tax ({tip_percentage}%)   : KES {tip_amount:.2f}")
+print("-" * 30)
+print(f"Total Amount Due : KES {total_bill:.2f}")
+print("=" * 30)
