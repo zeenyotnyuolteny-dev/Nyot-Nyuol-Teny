@@ -1,0 +1,46 @@
+# Week 3 Assignment: Grade Reporter
+# Description: Processes student scores, assigns letter grades, counts passes/fails, 
+# and calculates the average score programmatically.
+
+scores = [72, 45, 90, 61, 38]
+
+pass_count = 0
+fail_count = 0
+total_score = 0
+total_students = len(scores)
+
+print("--- Student Grade Report ---")
+
+# Step 1: Use a for loop to go through every score in the list
+for score in scores:
+    total_score += score
+    
+    # Step 2: Use if / elif / else to determine letter grades
+    if score >= 80:
+        grade = "A"
+    elif score >= 70:
+        grade = "B"
+    elif score >= 50:
+        grade = "C"
+    else:
+        grade = "F"
+        
+    # Step 3: Print each score with its grade on its own line
+    print(f"Score: {score} -> Grade: {grade}")
+    
+    # Step 4: Count passes (>= 50) and fails (< 50)
+    if score >= 50:
+        pass_count += 1
+    else:
+        fail_count += 1
+
+# Step 5: Calculate average rounded to one decimal place
+average_score = round(total_score / total_students, 1)
+
+print("\n" + "=" * 30)
+print("         CLASS SUMMARY        ")
+print("=" * 30)
+print(f"Total Passed : {pass_count}")
+print(f"Total Failed : {fail_count}")
+print(f"Average Score: {average_score}")
+print("=" * 30)
